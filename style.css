@@ -1,0 +1,77 @@
+.body {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    border: 1px solid red;
+    width: 56.25em;
+    min-height: 31.25em;
+}
+
+.background {
+    display: flex;
+    border-bottom: 1px solid red;
+    gap: 0.1em
+}
+
+.houses {
+    background-color: rgb(48, 48, 48);
+    height: 20em;
+    width: 6em;
+}
+
+.x {
+    height: 15em;
+    position: relative;
+    top: 5em;
+}
+
+.man {
+    position: absolute;
+    bottom: 0;
+    width: 9em;
+    height: 6em;
+}
+
+.obstacles {
+    position: absolute;
+    bottom: 0;
+    background-color: blue;
+    width: 2em;
+    height: 3em;
+    left: 68em;
+    animation: block-animation 1s infinite linear;
+}
+
+#right-wheel, #left-wheel {
+    animation: wheels 0.3s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.animate-man {
+    transition: animation 500ms;
+    animation: manUp 500ms infinite ;
+}
+
+@keyframes block-animation {
+    from{ left: 68em }
+    to { left: 16.3em }
+}
+
+@keyframes wheels {
+    from { transform: rotateZ(0deg);}
+    to { transform: rotateZ(360deg);}
+}
+
+@keyframes manUp {
+    0% { bottom: 5em }
+    30% { bottom: 7em }
+    70% { bottom: 5em }
+    1000% { bottom: 0em }
+    
+}
