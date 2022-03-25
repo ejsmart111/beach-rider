@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
 .body {
     display: flex;
     align-content: center;
@@ -7,55 +11,105 @@
 }
 
 .container {
-    border: 1px solid red;
     width: 56.25em;
     min-height: 31.25em;
+    background-color: #dddddd;
 }
 
 .background {
     display: flex;
-    border-bottom: 1px solid red;
-    gap: 0.1em
+    gap: 0.1em;
+    height: 20em;
+    justify-content: space-around;
+    background-color: rgb(105, 195, 247);
+}
+
+.score {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    color: #ffffff;
+}
+
+.game-over {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(0deg, #d2cd2d 40%, #b30000ff 48%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    display: none;
 }
 
 .houses {
-    background-color: rgb(48, 48, 48);
-    height: 20em;
-    width: 6em;
+    height: 5em;
+    width: 8em;
+    position: relative;
+    bottom: 0.5em;
 }
 
 .x {
-    height: 15em;
-    position: relative;
-    top: 5em;
+    bottom: 0;
+}
+
+.y {
+    bottom: -5.5em;
+}
+
+.z {
+    bottom: 1.4em;
 }
 
 .man {
     position: absolute;
-    bottom: 0;
-    width: 9em;
-    height: 6em;
+    bottom: 0.525em;
+    width: 7em;
+    height: 4em;
 }
 
 .obstacles {
     position: absolute;
-    bottom: 0;
-    background-color: blue;
+    bottom: 0.525em;
+    background-color: #383838;
+    border-top: 4px solid #000000;
     width: 2em;
     height: 3em;
     left: 68em;
-    animation: block-animation 1s infinite linear;
+}
+
+.sun {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #ffed8a;
+    position: relative;
+    top: 5em;
+    left: 50em;
 }
 
 #right-wheel, #left-wheel {
-    animation: wheels 0.3s infinite linear;
     transform-origin: center;
     transform-box: fill-box;
 }
 
+.wheel-animation {
+    animation: wheels 0.3s infinite linear;
+}
+
 .animate-man {
     transition: animation 500ms;
-    animation: manUp 500ms infinite ;
+    animation: manUp 400ms infinite ;
+}
+
+#sand {
+    background-color: #b85900;
+    display: flex;
+    width: 56.25em;
+    bottom: 0;
+    position: absolute;
+    height: 0.525em;
+}
+
+.particles {
+    position: relative;
 }
 
 @keyframes block-animation {
@@ -73,5 +127,4 @@
     30% { bottom: 7em }
     70% { bottom: 5em }
     1000% { bottom: 0em }
-    
 }
