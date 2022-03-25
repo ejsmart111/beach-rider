@@ -37,6 +37,7 @@ body {
     -webkit-text-fill-color: transparent;
     text-align: center;
     display: none;
+    animation: fadeinout 1.5s infinite ease-in-out;
 }
 
 .houses {
@@ -85,6 +86,14 @@ body {
     left: 50em;
 }
 
+#instruction {
+    text-align: center;
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    bottom: 10em;
+    animation: fadeinout 1.5s infinite ease-in-out;
+}
+
 #right-wheel, #left-wheel {
     transform-origin: center;
     transform-box: fill-box;
@@ -127,4 +136,9 @@ body {
     30% { bottom: 7em }
     70% { bottom: 5em }
     1000% { bottom: 0em }
+}
+
+@keyframes fadeinout {
+    0% { opacity:  1;}
+    100% { opacity:  0;}
 }
