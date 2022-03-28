@@ -121,6 +121,20 @@ body {
     position: relative;
 }
 
+#mobile {
+    display: none;
+}
+
+#pc {
+    display: block;
+}
+
+.mobile-message {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
 @keyframes block-animation {
     from{ left: 68em }
     to { left: 16.3em }

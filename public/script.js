@@ -20,6 +20,7 @@ highScore.innerHTML = '<h3>'+ hiScore +'</h3>'
 function start() {
     rightWheel.classList.add('wheel-animation')
     leftWheel.classList.add('wheel-animation')
+    scoreVal = 0
 
     const jumpFunction = (e) => {
         const charCode = e.code
@@ -79,7 +80,8 @@ function start() {
 }
 
 document.addEventListener('keydown', e => {
-    if (e.code === 'Enter') {
+    if ((e.code === 'Enter' && scoreVal == 0) ||
+        (e.code === 'Enter' && isDead)) {
         obstacles.style.left =  68 + 'em'
         gameOver.style.display = 'none'
         instruction.style.display = 'none'
